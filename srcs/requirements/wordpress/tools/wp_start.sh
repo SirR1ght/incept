@@ -26,18 +26,28 @@ wp core install		--allow-root \
 					--admin_email="gsusanna@student.21-school.ru" \
 					--quiet
 
-wp user create		park	linkin_park@$DOMAIN_NAME \
+wp user create		park linkin_park@$DOMAIN_NAME \
 					--role=author \
 					--first_name=Linkin \
 					--last_name=Park \
-					--user_pass=rock13 \
+					--user_pass="rock13" \
+					--allow-root \
 					--quiet 
 
 wp user create		door	3_doors_down@$DOMAIN_NAME \
 					--role=author \
 					--first_name=3_Doors \
 					--last_name=Down \
-					--user_pass=rock13 \
+					--user_pass="rock13" \
+					--allow-root \
 					--quiet 
+
+wp user create		mama mama@$DOMAIN_NAME \
+					--first_name=mama_mama \
+					--last_name=papa \
+					--role=author \
+					--user_pass="mama" \
+					--allow-root \
+					--quiet
 
 php-fpm7 -F -R --nodaemonize;
